@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <title>My ChartJS</title>
+  </head>
+  <body>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+  </body>
+
+  <script type="text/javascript">
+    let myChart = document.getElementById('myChart').getContext('2d');
+
+    //Global Options
+    // Chart.defaults.global.defaultFontFamily = 'Lato';
+    // Chart.defaults.global.defaultFontSize = 18;
+    // Chart.defaults.global.defaultFontColor = '#7777';
+
+    let massPopChart = new Chart(myChart, {
+      type:'bar', //bar, horizontalBar, pie, line, doughnat, radar, polarArea
+      data:{
+        labels:['Bekasi', 'Jakarta', 'Bandung', 'Depok'],
+        datasets:[{
+          label:'Points',
+          data:[15500, 130215,202150,102320],
+          // backgroundColor:'green',
+          backgroundColor:[
+            'rgba(255,99,132,0.6)',
+            'rgba(54,162,235,0.6)',
+            'rgba(255,206,86,0.6)',
+            'rgba(75,192,192,0.6)'
+          ],
+          borderWidth:1,
+          borderColor:'#7777',
+          hoverBorderWidth: 3,
+          hoverBorderColor:'#000',
+        }]
+      },
+      options:{
+        title:{
+          display:true,
+          text:'Undefined City Data',
+          fontSize:25
+        },
+        legend:{
+          display: true,
+          position:'right',
+          labels:{
+            fontColor:'#000'
+          }
+        },
+        layout:{
+          padding:{
+            left: 50,
+            right:0,
+            bottom:0,
+            top:0
+          }
+        },
+        tooltips:{
+          // enabled:false
+        }
+      }
+    });
+  </script>
+</html>
