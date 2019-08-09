@@ -1,2 +1,2 @@
 # chartJS
-Documentation about create chart with ChartJS
+Create chart with ChartJS
